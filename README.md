@@ -1,2 +1,0 @@
-# FEM-tip-calculator
-Heyyy
