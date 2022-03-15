@@ -5,34 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.scss">
   
   <title>Frontend Mentor | Tip calculator app</title>
 </head>
 <body>
 
-  Bill
+  <h1><span>Spli</span><span>tter</span></h1>
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+  <form action="#">
+    <label for="bill_amt">Bill</label>
+    <input type="text" name="bill_amt" id="bill_amt">
 
-  Number of People
+    <fieldset>
+      <legend>Select Tip %</legend>
+      <div class="grid">
+        <button>5%</button>
+        <button>10%</button>
+        <button>15%</button>
+        <button>25%</button>
+        <button>50%</button>
+        <input type="text" name="" id="" placeholder="Custom">
+      </div>
+    </fieldset>
+  </form>
 
-  Tip Amount
-  / person
+  <label for="no_of_ppl">Number of People</label>
+  <input type="text" name="no_of_ppl" id="no_of_ppl">
 
-  Total
-  / person
+  <div>
+    <p>Tip Amount <span>/ person</span></p>
+    <p>Total <span>/ person</span></p>
+  </div>
 
-  Reset
+  <button>Reset</button>
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Devika Sujith</a>.
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
