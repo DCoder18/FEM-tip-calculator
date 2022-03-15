@@ -1,2 +1,150 @@
-.attribution { font-size: 11px; text-align: center; }
-.attribution a { color: hsl(228, 45%, 44%); }
+:root {
+  --clr-cyan-light-1: 189, 41%, 97%;
+  --clr-cyan-light-2: 185, 41%, 84%;
+
+  --clr-cyan-dark: 183 100% 15%;
+
+  --clr-cyan-grey-1: 186, 14%, 43%;
+  --clr-cyan-grey-2: 184, 14%, 56%;
+
+  --clr-cyan-strong: 172, 67%, 45%;
+
+  --clr-white: 0 0% 100%;
+}
+
+// - Strong cyan: hsl(172, 67%, 45%) -
+// - Very dark cyan: hsl(183, 100%, 15%) -
+// - Dark grayish cyan: hsl(186, 14%, 43%) -
+// - Grayish cyan: hsl(184, 14%, 56%) -
+// - Light grayish cyan: hsl(185, 41%, 84%) -
+// - Very light grayish cyan: hsl(189, 41%, 97%) -
+// - White: hsl(0, 0%, 100%)
+
+
+
+/*-------
+Reset
+-------*/
+*, 
+*::before, 
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html, body {
+  font-size: 62.5%;
+  height: 100vh;
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  background-color: #{'hsl(var(--clr-cyan-light-2))'};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Space Mono', monospace;
+}
+
+a {
+  text-decoration: none;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+}
+
+input[type='text'],
+button {
+  font-family: inherit;
+}
+
+
+
+/*-------
+Utility
+-------*/
+.flex {
+  display: flex;
+}
+
+.grid {
+  display: grid;
+}
+
+
+
+/*---------
+Components
+----------*/
+
+.wrapper {
+  background-color: #{'hsl(var(--clr-white))'};
+  border-radius: 2.5rem;
+  padding: 3rem;
+  box-shadow: 0 3.2rem 4.3rem #{'hsla(var(--clr-cyan-grey-2) / .2)'};
+}
+
+.logo {
+  margin-bottom: 5rem;
+}
+
+label, legend {
+  display: inline-block;
+  color: #{'hsl(var(--clr-cyan-grey-1))'};
+  margin-bottom: .5rem;
+}
+
+input[type='text'] {
+  display: block;
+  width: 100%;
+  min-height: 3.5rem;
+  font-size: 2.4rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background-color: #{'hsl(var(--clr-cyan-light-1))'};
+
+  &::placeholder {
+    text-align: center;
+  }
+}
+
+.tip,
+.bill,
+.no-of-ppl {
+  margin-top: 2rem;
+}
+
+.btn {
+  border: none;
+  border-radius: 5px;
+  background-color: #{'hsl(var(--clr-cyan-dark))'};
+  cursor: pointer;
+
+  &.btn--tip {
+    min-height: 4.5rem;
+    font-size: 2.4rem;
+    color: #{'hsl(var(--clr-white))'};
+  }
+}
+
+.tip {
+  .grid {
+    grid-template-columns: repeat(3, 11.5rem);
+    gap: 1rem;
+  }
+}
+
+ 
+
+
+
+// .attribution { font-size: 11px; text-align: center; }
+// .attribution a { color: hsl(228, 45%, 44%); }
