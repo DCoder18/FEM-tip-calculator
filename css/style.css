@@ -99,28 +99,29 @@ label, legend {
 input[type='text'] {
   display: block;
   width: 100%;
-  min-height: 3.5rem;
   font-size: 2.4rem;
   border: none;
   outline: none;
   border-radius: 5px;
   background-color: hsl(var(--clr-cyan-light-1));
+  padding: .5rem 1.3rem;
+  text-align: right;
 }
 
 input[type='text']::-webkit-input-placeholder {
-  text-align: center;
+  text-align: right;
 }
 
 input[type='text']:-ms-input-placeholder {
-  text-align: center;
+  text-align: right;
 }
 
 input[type='text']::-ms-input-placeholder {
-  text-align: center;
+  text-align: right;
 }
 
 input[type='text']::placeholder {
-  text-align: center;
+  text-align: right;
 }
 
 .tip,
