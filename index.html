@@ -21,38 +21,45 @@
 
   <main>
     <div class="wrapper">
-      <form action="#">
-        <section class="bill">
-          <label for="bill_amt">Bill</label>
-          <input type="text" name="bill_amt" id="bill_amt" placeholder="0">
-        </section>
-      
-        <section class="tip">
-          <fieldset>
-            <legend>Select Tip %</legend>
-            <div class="grid">
-              <button class="btn btn--tip">5%</button>
-              <button class="btn btn--tip">10%</button>
-              <button class="btn btn--tip">15%</button>
-              <button class="btn btn--tip">25%</button>
-              <button class="btn btn--tip">50%</button>
-              <input type="text" name="custom" id="custom" placeholder="Custom">
-            </div>
-          </fieldset>
-        </section>
+      <div class="flex main">
+        <form action="#">
+          <section class="bill">
+            <label for="bill-amt">Bill</label>
+            <input type="text" name="bill-amt" id="bill-amt" placeholder="0">
+          </section>
         
-        <section class="no-of-ppl">
-          <label for="no_of_ppl">Number of People</label>
-          <input type="text" name="no_of_ppl" id="no_of_ppl" placeholder="0">
+          <section class="tip">
+            <fieldset>
+              <legend>Select Tip %</legend>
+              <div class="grid">
+                <button class="btn btn--tip">5%</button>
+                <button class="btn btn--tip">10%</button>
+                <button class="btn btn--tip">15%</button>
+                <button class="btn btn--tip">25%</button>
+                <button class="btn btn--tip">50%</button>
+                <input type="text" name="custom" id="custom" placeholder="Custom">
+              </div>
+            </fieldset>
+          </section>
+          
+          <section class="no-of-ppl">
+            <label for="no_of_ppl">Number of People</label>
+            <input type="text" name="no_of_ppl" id="no_of_ppl" placeholder="0">
+          </section>
+        </form>
+        
+        <section class="result">
+          <div class="result_item flex">
+            <p>Tip Amount <span>/ person</span></p>
+            <p class="result_amt">$0.00</p>
+          </div>
+          <div class="result_item flex">
+            <p>Total <span>/ person</span></p>
+            <p class="result_amt">$0.00</p>
+          </div>
+          <button class="btn btn--result">Reset</button>
         </section>
-      </form>
-      
-      <!-- <div>
-        <p>Tip Amount <span>/ person</span></p>
-        <p>Total <span>/ person</span></p>
-      </div> -->
-  
-      <!-- <button>Reset</button> -->
+      </div>
     </div>
   </main>
 <!--   

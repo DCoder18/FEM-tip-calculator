@@ -73,10 +73,12 @@ Utility
 -------*/
 .flex {
   display: flex;
+  gap: var(--gap, 4rem);
 }
 
 .grid {
   display: grid;
+  gap: 1rem;
 }
 
 
@@ -102,6 +104,8 @@ label, legend {
   margin-bottom: .5rem;
 }
 
+
+// Form
 input[type='text'] {
   display: block;
   width: 100%;
@@ -129,19 +133,22 @@ input[type='text'] {
 .tip,
 .bill,
 .no-of-ppl {
-  margin-top: 2rem;
+  margin-top: 4rem;
 }
+//
 
+
+// Button
 .btn {
   border: none;
   border-radius: 5px;
-  background-color: #{'hsl(var(--clr-cyan-dark))'};
   cursor: pointer;
+  min-height: 4.5rem;
+  font-size: 2.4rem;
 
-  &.btn--tip {
-    min-height: 4.5rem;
-    font-size: 2.4rem;
+  &--tip {
     color: #{'hsl(var(--clr-white))'};
+    background-color: #{'hsl(var(--clr-cyan-dark))'};
     transition: background-color 300ms ease-in-out;
 
     &:hover,
@@ -151,14 +158,52 @@ input[type='text'] {
       outline: none;
     }
   }
-}
 
+  &--result {
+    background-color: #{'hsl(var(--clr-cyan-strong-2))'};
+    color: #{'hsl(var(--clr-cyan-dark))'};
+    position: absolute;
+    bottom: 0;
+    width: auto;
+  }
+}
+//
+
+
+// Sections
 .tip {
   .grid {
     grid-template-columns: repeat(3, 11.5rem);
-    gap: 1rem;
   }
 }
+
+.result {
+  background-color: #{'hsl(var(--clr-cyan-dark))'};
+  border-radius: 1.5rem;
+  padding: 4rem;
+  color: #{'hsl(var(--clr-white))'};
+  position: relative;
+
+  &_item {
+    justify-content: space-between;
+    --gap: 8rem;
+    align-items: center;
+    margin-bottom: 3rem;
+  }
+
+ &_amt {
+   font-size: 4.8rem;
+   color: #{'hsl(var(--clr-cyan-strong-2))'};
+ }
+
+  span {
+    color: #{'hsl(var(--clr-cyan-grey-2))'};
+    font-size: 1.3rem;
+    display: block;
+  }
+}
+
+
  
 
 
