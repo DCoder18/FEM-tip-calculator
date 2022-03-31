@@ -38,7 +38,7 @@ Reset
 
 html, body {
   font-size: 62.5%;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 body {
@@ -50,6 +50,7 @@ body {
   align-items: center;
   flex-direction: column;
   font-family: 'Space Mono', monospace;
+  padding: 3rem;
 }
 
 a {
@@ -86,12 +87,21 @@ Utility
 /*---------
 Components
 ----------*/
-
 .wrapper {
   background-color: #{'hsl(var(--clr-white))'};
   border-radius: 2.5rem;
   padding: 3rem;
   box-shadow: 0 3.2rem 4.3rem #{'hsla(var(--clr-cyan-grey-2) / .2)'};
+}
+
+@media (max-width: 45em) {
+  .main {
+    flex-direction: column;
+  }
+
+  .logo {
+    margin: 5rem 0;
+  }
 }
 
 .logo {
