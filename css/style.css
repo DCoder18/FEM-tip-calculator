@@ -46,7 +46,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   font-family: 'Space Mono', monospace;
-  padding: 3rem;
+  padding: 2rem;
 }
 
 a {
