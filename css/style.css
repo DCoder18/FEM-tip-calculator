@@ -147,16 +147,17 @@ input[type='text']:focus, input[type='text']:hover {
   cursor: pointer;
   min-height: 4.5rem;
   font-size: 2.4rem;
+  text-transform: uppercase;
 }
 
-.btn--tip {
+.btn--tip, .btn--result {
   color: hsl(var(--clr-white));
   background-color: hsl(var(--clr-cyan-dark));
   -webkit-transition: background-color 300ms ease-in-out;
   transition: background-color 300ms ease-in-out;
 }
 
-.btn--tip:hover, .btn--tip:focus {
+.btn--tip:hover, .btn--tip:focus, .btn--result:hover, .btn--result:focus {
   background-color: hsl(var(--clr-cyan-strong-1));
   color: hsl(var(--clr-cyan-dark));
   outline: none;
@@ -165,9 +166,7 @@ input[type='text']:focus, input[type='text']:hover {
 .btn--result {
   background-color: hsl(var(--clr-cyan-strong-2));
   color: hsl(var(--clr-cyan-dark));
-  position: absolute;
-  bottom: 0;
-  width: auto;
+  width: 100%;
 }
 
 .tip .grid {
@@ -181,6 +180,13 @@ input[type='text']:focus, input[type='text']:hover {
   padding: 4rem;
   color: hsl(var(--clr-white));
   position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .result_item {

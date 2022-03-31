@@ -145,8 +145,10 @@ input[type='text'] {
   cursor: pointer;
   min-height: 4.5rem;
   font-size: 2.4rem;
+  text-transform: uppercase;
 
-  &--tip {
+  &--tip, 
+  &--result {
     color: #{'hsl(var(--clr-white))'};
     background-color: #{'hsl(var(--clr-cyan-dark))'};
     transition: background-color 300ms ease-in-out;
@@ -162,9 +164,7 @@ input[type='text'] {
   &--result {
     background-color: #{'hsl(var(--clr-cyan-strong-2))'};
     color: #{'hsl(var(--clr-cyan-dark))'};
-    position: absolute;
-    bottom: 0;
-    width: auto;
+    width: 100%;
   }
 }
 //
@@ -183,6 +183,8 @@ input[type='text'] {
   padding: 4rem;
   color: #{'hsl(var(--clr-white))'};
   position: relative;
+  flex-direction: column;
+  justify-content: space-between;
 
   &_item {
     justify-content: space-between;
