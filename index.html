@@ -22,7 +22,7 @@
   <main>
     <div class="wrapper">
       <div class="flex main">
-        <form action="#">
+        <form autocomplete="off" action="#">
           <section class="bill">
             <label for="bill-amt">Bill</label>
             <input type="text" name="bill-amt" id="bill-amt" placeholder="0">
@@ -32,12 +32,12 @@
             <fieldset>
               <legend>Select Tip %</legend>
               <div class="grid">
-                <button class="btn btn--tip">5%</button>
-                <button class="btn btn--tip">10%</button>
-                <button class="btn btn--tip">15%</button>
-                <button class="btn btn--tip">25%</button>
-                <button class="btn btn--tip">50%</button>
-                <input type="text" name="custom" id="custom" placeholder="Custom">
+                <button type="button" data-tip-amount="5" class="btn btn--tip">5%</button>
+                <button type="button" data-tip-amount="10" class="btn btn--tip">10%</button>
+                <button type="button" data-tip-amount="15" class="btn btn--tip">15%</button>
+                <button type="button" data-tip-amount="25" class="btn btn--tip">25%</button>
+                <button type="button" data-tip-amount="50" class="btn btn--tip">50%</button>
+                <input type="text" name="custom" id="custom-tip" placeholder="Custom">
               </div>
             </fieldset>
           </section>
