@@ -171,6 +171,10 @@ input[type='text'] {
     }
   }
 
+  &--tip:focus {
+      background-color: #{'hsl(var(--clr-cyan-strong-2))'};
+  }
+
   &--result {
     background-color: #{'hsl(var(--clr-cyan-strong-2))'};
     color: #{'hsl(var(--clr-cyan-dark))'};
