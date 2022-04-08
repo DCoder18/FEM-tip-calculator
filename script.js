@@ -9,13 +9,19 @@ const elTipCustom = document.querySelector('#custom-tip')
 
 let bill = 0;
 let no_of_ppl = 0;
+
 let tip = 0;
 let tip_custom = 0;
-// const total_amount = 0;
-// const total_tip = 0;
+
+let total_tip = 0;
+let total_bill = 0;
+
+let tip_per_person = 0;
+let bill_per_person = 0;
 
 //Get total tip
-const total_tip = (bill, tip) => bill * (tip/100);
+const calcTotalTip = (nbill, ntip) => nbill * (ntip/100);
+const calcTotalBill = (nbill, ntip) => nbill + ntip;
 
 for (const btn of elBtnTip) {
   btn.addEventListener('click', function() {
@@ -24,23 +30,15 @@ for (const btn of elBtnTip) {
     tip = Number(btn.getAttribute('data-tip-amount'))
     tip_custom = elTipCustom.value
 
-    total_tip(bill, tip);
+    total_tip = calcTotalTip(bill, tip);
+    total_bill = calcTotalBill(bill, total_tip);
 
-    console.log(bill, no_of_ppl, tip, total_tip);
+    tip_per_person = total_tip / no_of_ppl
+    bill_per_person = total_bill / no_of_ppl
+
+    elResultTip.innerHTML = `$${tip_per_person.toFixed(2)}${Number.isInteger(tip_per_person) ? '.00' : ''}`
+    elResultTotal.innerHTML = `$${bill_per_person.toFixed(2)}${Number.isInteger(bill_per_person) ? '.00' : ''}`
+
+    // console.log(total_tip, total_bill, tip_per_person, bill_per_person);
   })
 }
-
-
-
-
-/* 
-1. Get bill amount
-2. Get selected tip amount
-3. Get number of people
-4. Calculate total 
-    Total Tip: bill*(tip/100)
-    Total Bill: bill + tip
-
-    Tip / person: Total tip/no of ppl
-    Total /person: Total/no of ppl
-*/
