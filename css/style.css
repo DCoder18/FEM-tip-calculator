@@ -6,6 +6,7 @@
   --clr-cyan-grey-2: 184, 14%, 56%;
   --clr-cyan-strong-1: 172, 61%, 77%;
   --clr-cyan-strong-2: 172, 67%, 45%;
+  --clr-red: 13, 70%, 60%;
   --clr-white: 0 0% 100%;
 }
 
@@ -73,10 +74,24 @@ Utility
   gap: var(--gap, 4rem);
 }
 
+.space-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
 .grid {
   display: -ms-grid;
   display: grid;
   gap: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
 }
 
 /*---------
@@ -152,6 +167,10 @@ input[type='text']:focus, input[type='text']:hover {
 .bill,
 .no-of-ppl {
   margin-top: 4rem;
+}
+
+#error-msg {
+  color: hsl(var(--clr-red));
 }
 
 .btn {
