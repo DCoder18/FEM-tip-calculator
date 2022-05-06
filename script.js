@@ -8,6 +8,8 @@ const elResultTotal = document.querySelector('.result_amt--total')
 const elBtnTip = document.querySelectorAll('.btn--tip')
 const elTipCustom = document.querySelector('#custom-tip')
 
+const elBtnReset = document.querySelector('.btn--reset')
+
 elErrorMsg.setAttribute('class', 'hidden');
 
 let bill = 0;
@@ -28,6 +30,7 @@ const calcTotalBill = (nbill, ntip) => nbill + ntip;
 const formatResultValue = (result) => Number.isInteger(result) ? `${result}.00` : result.toFixed(2);
 //
 
+//Select tip with button
 for (const btn of elBtnTip) {
   btn.addEventListener('click', function() {
     bill = Number(elBill.value)
@@ -38,6 +41,7 @@ for (const btn of elBtnTip) {
   })
 }
 
+//Select custom tip with keyboard
 elTipCustom.addEventListener('keyup', function (e) {
   if (e.key === 'Enter') {
     tip = elTipCustom.value
@@ -46,6 +50,27 @@ elTipCustom.addEventListener('keyup', function (e) {
   } 
 })
 
+//Reset Button
+elBtnReset.addEventListener('click', function() {
+  bill = 0;
+  no_of_ppl = 0;
+  
+  tip = 0;
+  tip_custom = 0;
+  
+  total_tip = 0;
+  total_bill = 0;
+  
+  tip_per_person = 0.00;
+  bill_per_person = 0.00;
+
+  elBill.innerHTML = ''
+  elNoOfPeople.innerHTML = ''
+  elResultTip.innerHTML = `$0.00`
+  elResultTotal.innerHTML = `$0.00`
+})
+
+//Calculate results
 function calculateSplitAmount() {
   if(no_of_ppl == 0) {
     elErrorMsg.setAttribute('class', 'visible')
@@ -64,3 +89,5 @@ function calculateSplitAmount() {
     elNoOfPeople.style.border = '2px solid transparent'
   }
 }
+
+
