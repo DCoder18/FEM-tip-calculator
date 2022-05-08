@@ -30,6 +30,7 @@ const calcTotalBill = (nbill, ntip) => nbill + ntip;
 const formatResultValue = (result) => Number.isInteger(result) ? `${result}.00` : result.toFixed(2);
 //
 
+
 //Select tip with button
 for (const btn of elBtnTip) {
   btn.addEventListener('click', function() {
@@ -41,22 +42,25 @@ for (const btn of elBtnTip) {
   })
 }
 
+
 //Select custom tip with keyboard
 elTipCustom.addEventListener('keyup', function (e) {
   if (e.key === 'Enter') {
+    bill = Number(elBill.value)
+    no_of_ppl = Number(elNoOfPeople.value)
     tip = elTipCustom.value
 
     calculateSplitAmount()
   } 
 })
 
-//Reset Button
+
+// Reset Button
 elBtnReset.addEventListener('click', function() {
   bill = 0;
   no_of_ppl = 0;
   
   tip = 0;
-  tip_custom = 0;
   
   total_tip = 0;
   total_bill = 0;
@@ -64,11 +68,13 @@ elBtnReset.addEventListener('click', function() {
   tip_per_person = 0.00;
   bill_per_person = 0.00;
 
-  elBill.innerHTML = ''
-  elNoOfPeople.innerHTML = ''
-  elResultTip.innerHTML = `$0.00`
-  elResultTotal.innerHTML = `$0.00`
+  elBill.value = ''
+  elNoOfPeople.value = ''
+  elTipCustom.value = ''
+  elResultTip.innerHTML = '$0.00'
+  elResultTotal.innerHTML = '$0.00'
 })
+
 
 //Calculate results
 function calculateSplitAmount() {
