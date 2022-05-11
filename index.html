@@ -25,7 +25,11 @@
         <form autocomplete="off" action="#">
           <section class="bill">
             <label for="bill-amt">Bill</label>
-            <input type="text" name="bill-amt" id="bill-amt" placeholder="0">
+            
+            <div class="input-container">
+              <img class="input-icon" src="images/icon-dollar.svg" alt="">
+              <input type="text" name="bill-amt" id="bill-amt" placeholder="0">
+            </div>
           </section>
         
           <section class="tip">
@@ -41,14 +45,18 @@
               </div>
             </fieldset>
           </section>
+
           
           <section class="no-of-ppl">
             <div class="flex space-between">
               <label for="no_of_ppl">Number of People</label>
               <p id="error-msg">Can't be zero</p>
             </div>
-            <input type="text" name="no_of_ppl" id="no_of_ppl" placeholder="0">
-            
+
+            <div class="input-container">
+              <img src="images/icon-person.svg" alt="">
+              <input type="text" name="no_of_ppl" id="no_of_ppl" placeholder="0">
+            </div>
           </section>
         </form>
         

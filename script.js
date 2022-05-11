@@ -10,7 +10,8 @@ const elTipCustom = document.querySelector('#custom-tip')
 
 const elBtnReset = document.querySelector('.btn--reset')
 
-elErrorMsg.setAttribute('class', 'hidden');
+elErrorMsg.setAttribute('class', 'hidden')
+elBtnReset.disabled = true
 
 let bill = 0;
 let no_of_ppl = 0;
@@ -30,6 +31,38 @@ const calcTotalBill = (nbill, ntip) => nbill + ntip;
 const formatResultValue = (result) => Number.isInteger(result) ? `${result}.00` : result.toFixed(2);
 //
 
+//Calculate results
+function calculateSplitAmount() {
+  bill = Number(elBill.value)
+  no_of_ppl = Number(elNoOfPeople.value)
+
+  for (const btn of elBtnTip) {
+    btn.addEventListener('click', function() {
+      tip = Number(btn.getAttribute('data-tip-amount'))
+    })
+  }
+  
+
+  elBtnReset.disabled = false
+
+  if(no_of_ppl == 0) {
+    elErrorMsg.setAttribute('class', 'visible')
+    elNoOfPeople.style.border = `2px solid ${'hsl(var(--clr-red))'}`
+    
+  } else {
+    total_tip = calcTotalTip(bill, tip);
+    total_bill = calcTotalBill(bill, total_tip);
+
+    tip_per_person = total_tip / no_of_ppl
+    bill_per_person = total_bill / no_of_ppl
+    elResultTip.innerHTML = `$${formatResultValue(tip_per_person)}`
+    elResultTotal.innerHTML = `$${formatResultValue(bill_per_person)}`
+
+    elErrorMsg.setAttribute('class', 'hidden')
+    elNoOfPeople.style.border = '2px solid transparent'
+  }
+}
+
 
 //Select tip with button
 for (const btn of elBtnTip) {
@@ -42,16 +75,15 @@ for (const btn of elBtnTip) {
   })
 }
 
-
 //Select custom tip with keyboard
-elTipCustom.addEventListener('keyup', function (e) {
-  if (e.key === 'Enter') {
+elTipCustom.addEventListener('input', function (e) {
     bill = Number(elBill.value)
     no_of_ppl = Number(elNoOfPeople.value)
     tip = elTipCustom.value
 
+    elBtnReset.disabled = false
+
     calculateSplitAmount()
-  } 
 })
 
 
@@ -73,27 +105,10 @@ elBtnReset.addEventListener('click', function() {
   elTipCustom.value = ''
   elResultTip.innerHTML = '$0.00'
   elResultTotal.innerHTML = '$0.00'
+
+  elBtnReset.disabled = true
 })
 
 
-//Calculate results
-function calculateSplitAmount() {
-  if(no_of_ppl == 0) {
-    elErrorMsg.setAttribute('class', 'visible')
-    elNoOfPeople.style.border = `2px solid ${'hsl(var(--clr-red))'}`
-    
-  } else {
-    total_tip = calcTotalTip(bill, tip);
-    total_bill = calcTotalBill(bill, total_tip);
-
-    tip_per_person = total_tip / no_of_ppl
-    bill_per_person = total_bill / no_of_ppl
-    elResultTip.innerHTML = `$${formatResultValue(tip_per_person)}`
-    elResultTotal.innerHTML = `$${formatResultValue(bill_per_person)}`
-
-    elErrorMsg.setAttribute('class', 'hidden')
-    elNoOfPeople.style.border = '2px solid transparent'
-  }
-}
 
 

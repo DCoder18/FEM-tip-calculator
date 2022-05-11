@@ -154,6 +154,16 @@ input[type='text'] {
   }
 }
 
+.input-container {
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 1.4rem;
+    left: 1.4rem;
+  }
+}
+
 .tip,
 .bill,
 .no-of-ppl {
@@ -197,6 +207,10 @@ input[type='text'] {
     background-color: #{'hsl(var(--clr-cyan-strong-2))'};
     color: #{'hsl(var(--clr-cyan-dark))'};
     width: 100%;
+
+    &:disabled, &[disabled]{
+      opacity: 0.3;
+    }
   }
 }
 //
